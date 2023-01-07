@@ -1,0 +1,30 @@
+** One dot file rule 'em all'
+
+Emacs takes text editing to a whole new level. It is not just a text editor, but also a comprehensive application framework, providing a robust and multifunctional front-end for Linux systems. With its unique features and capabilities, Emacs is capable of doing things beyond what we could have even imagined when it was originally created. From editing text and creating scripts to managing files and controlling applications, Emacs is an all-in-one solution for any Linux user. With its incredible power and flexibility, Emacs has become an essential tool for many developers and system administrators all over the world.
+
+In this repository, I take the idea of using a single org file to manage my entire dotfiles in my Linux system. This is based on the tangle and export features of org-mode, a powerful tool for organizing information. With the help of this org file, I will be able to efficiently manage my Emacs configuration, as well as the configuration of a variety of other tools such as Bash, Zsh, Fish, Tmux, i3, NeoVim, Kitty, Xonsh, Vifm, Newsboat, Go, Makefile, and more. This org file provides me with an easy way to keep track of all the settings and configurations for my various tools, and to quickly make any changes I need. As a result, I can stay organized and work more efficiently.
+
+"Tangle" means that export from the org-file source block to the source file which computer can understand. And in contrast, "weave" is what we do when we write a mix of document and code block in org. Emacs Org system goes beyond the normal level that we usually meet in another mark-up language; it is not just used to write markup. Its perfect data structure makes it perfectly sync back and forth, so that source code stays in block in the Org file with the external environment.
+
+** Emacs and Literate Programming
+#+begin_src mermaid :eval t :file "images/literaguture-programming.png"
+flowchart LR
+A[Emacs User] --- |edit| B[Literature Document]
+B --> |tangle| C[Source Code]
+C --> |Weave| B
+C --> |Compile|D[Executable]
+D -->E[Machine]
+
+#+end_src
+
+#+RESULTS:
+[[file:images/literaguture-programming.png]]
+
+
+** TODO Show cases
+*** The editting project of this file. Thank for the help of org-sidebar
+
+[[file:images/My_dots_files/_20230107_130230screenshot.png]]
+*** The start board of Emacs
+
+[[file:images/My_dots_files/_20230107_173344screenshot.png]]
