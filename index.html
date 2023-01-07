@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2023-01-07 Sat 18:03 -->
+<!-- 2023-01-07 Sat 18:08 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Emacs Literate Configuration</title>
@@ -21,228 +21,228 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgc72d659">1. My dots files&#xa0;&#xa0;&#xa0;<span class="tag"><span class="TOC_3_org">TOC_3_org</span>&#xa0;<span class="QUOTE">QUOTE</span></span></a>
+<li><a href="#orgb4af8ce">1. My dots files&#xa0;&#xa0;&#xa0;<span class="tag"><span class="TOC_3_org">TOC_3_org</span>&#xa0;<span class="QUOTE">QUOTE</span></span></a>
 <ul>
-<li><a href="#org400cb9f">1.1. config.el</a></li>
-<li><a href="#orga7a2b39">1.2. start.el</a></li>
-<li><a href="#org1faf6de">1.3. middleware.el</a></li>
-<li><a href="#orgd7477bd">1.4. end.el</a></li>
-<li><a href="#orgf0d5520">1.5. Init.el</a></li>
-<li><a href="#orgd79058e">1.6. Package.el</a></li>
-<li><a href="#org7bc2092">1.7. External package</a>
+<li><a href="#org5352557">1.1. config.el</a></li>
+<li><a href="#orgc0e7913">1.2. start.el</a></li>
+<li><a href="#org8a89973">1.3. middleware.el</a></li>
+<li><a href="#orgf13939f">1.4. end.el</a></li>
+<li><a href="#orgcc06048">1.5. Init.el</a></li>
+<li><a href="#org6e22e43">1.6. Package.el</a></li>
+<li><a href="#org88b4b6a">1.7. External package</a>
 <ul>
-<li><a href="#org7d246d8">1.7.1. Academic.el</a></li>
-<li><a href="#orga755c35">1.7.2. other</a></li>
-<li><a href="#org13bfe0c">1.7.3. Vermin/capture</a></li>
-<li><a href="#org1a0ce05">1.7.4. Vterm</a></li>
-<li><a href="#orgb3cd753">1.7.5. User and email configure</a></li>
-<li><a href="#org60a5b1a">1.7.6. font and theme configure</a></li>
-<li><a href="#org1cc05c0">1.7.7. Org.el</a></li>
-<li><a href="#org2726ce9">1.7.8. Lisp.el</a></li>
+<li><a href="#orgc87f42f">1.7.1. Academic.el</a></li>
+<li><a href="#orga015e09">1.7.2. other</a></li>
+<li><a href="#orgf364fab">1.7.3. Vermin/capture</a></li>
+<li><a href="#org9370d17">1.7.4. Vterm</a></li>
+<li><a href="#org2543441">1.7.5. User and email configure</a></li>
+<li><a href="#org7c51baa">1.7.6. font and theme configure</a></li>
+<li><a href="#orgbba789d">1.7.7. Org.el</a></li>
+<li><a href="#orgaf9dd96">1.7.8. Lisp.el</a></li>
 </ul>
 </li>
-<li><a href="#org1a98797">1.8. Custom.el</a>
+<li><a href="#orgf4a71da">1.8. Custom.el</a>
 <ul>
-<li><a href="#orge836b10">1.8.1. Kmacro menu</a></li>
-<li><a href="#orgd138e35">1.8.2. org-babel-tangle-jump</a></li>
-<li><a href="#orgfcc3d02">1.8.3. Emacs everywhere</a></li>
-<li><a href="#org55c03f6">1.8.4. Hydra buffer menu</a></li>
-<li><a href="#orgc585bcf">1.8.5. Topsy</a></li>
-<li><a href="#orgbec2dc4">1.8.6. Org sticky header</a></li>
-<li><a href="#org222963b">1.8.7. org sidebar</a></li>
-<li><a href="#org8caea1d">1.8.8. Pop rule for man page</a></li>
-<li><a href="#org033647e">1.8.9. Modus theme</a></li>
-<li><a href="#orgc6de568">1.8.10. Flycheck</a></li>
-<li><a href="#org2133cdb">1.8.11. Nov</a></li>
-<li><a href="#org4e0a7e3">1.8.12. Wolfram-mode</a></li>
-<li><a href="#orgc1b40d7">1.8.13. Outshine</a></li>
-<li><a href="#orgd7ecd96">1.8.14. Websocket</a></li>
-<li><a href="#org1d26190">1.8.15. Org-roam-ui</a></li>
-<li><a href="#orgcf6c29b">1.8.16. Yequake</a></li>
-<li><a href="#orge5a66a8">1.8.17. unfill-region</a></li>
-<li><a href="#orgee16823">1.8.18. binding</a></li>
-<li><a href="#org1a0bc26">1.8.19. Exec path from cell</a></li>
-<li><a href="#orged57287">1.8.20. Asciidoc</a></li>
-<li><a href="#org980690a">1.8.21. copilot</a></li>
-<li><a href="#org2bd3005">1.8.22. dired narrow</a></li>
-<li><a href="#orgf78dcb7">1.8.23. ob-http</a></li>
-<li><a href="#org610f962">1.8.24. word-wrap</a></li>
-<li><a href="#org0131aef">1.8.25. save bookmark hook</a></li>
-<li><a href="#org9c53fbe">1.8.26. eaf</a></li>
-<li><a href="#org934260c">1.8.27. Org scrum</a></li>
-<li><a href="#org6273b88">1.8.28. orgaggregate</a></li>
-<li><a href="#org2502194">1.8.29. Racket</a></li>
-<li><a href="#orgfc88191">1.8.30. Poly-mode</a></li>
-<li><a href="#orgd731806">1.8.31. jupyter org</a></li>
-<li><a href="#org7db46a5">1.8.32. ob-mermaid</a></li>
+<li><a href="#org63cf86a">1.8.1. Kmacro menu</a></li>
+<li><a href="#org3e0a508">1.8.2. org-babel-tangle-jump</a></li>
+<li><a href="#org07c4b5d">1.8.3. Emacs everywhere</a></li>
+<li><a href="#org08eb276">1.8.4. Hydra buffer menu</a></li>
+<li><a href="#org98aac67">1.8.5. Topsy</a></li>
+<li><a href="#orgd50cf00">1.8.6. Org sticky header</a></li>
+<li><a href="#orgc86b60d">1.8.7. org sidebar</a></li>
+<li><a href="#org8628f81">1.8.8. Pop rule for man page</a></li>
+<li><a href="#orgc8ec174">1.8.9. Modus theme</a></li>
+<li><a href="#org4a17887">1.8.10. Flycheck</a></li>
+<li><a href="#org03d1cbe">1.8.11. Nov</a></li>
+<li><a href="#org3f32200">1.8.12. Wolfram-mode</a></li>
+<li><a href="#org1002b02">1.8.13. Outshine</a></li>
+<li><a href="#org537a9f0">1.8.14. Websocket</a></li>
+<li><a href="#org46970ea">1.8.15. Org-roam-ui</a></li>
+<li><a href="#org2eea1db">1.8.16. Yequake</a></li>
+<li><a href="#orgf6830f5">1.8.17. unfill-region</a></li>
+<li><a href="#orgbb9191d">1.8.18. binding</a></li>
+<li><a href="#orgbd37ae9">1.8.19. Exec path from cell</a></li>
+<li><a href="#org1b14243">1.8.20. Asciidoc</a></li>
+<li><a href="#org6ba70e6">1.8.21. copilot</a></li>
+<li><a href="#org03969af">1.8.22. dired narrow</a></li>
+<li><a href="#org794e862">1.8.23. ob-http</a></li>
+<li><a href="#org99a1da3">1.8.24. word-wrap</a></li>
+<li><a href="#org9de3f1e">1.8.25. save bookmark hook</a></li>
+<li><a href="#org04ce239">1.8.26. eaf</a></li>
+<li><a href="#orgc384599">1.8.27. Org scrum</a></li>
+<li><a href="#org67f1275">1.8.28. orgaggregate</a></li>
+<li><a href="#orgc1c2edc">1.8.29. Racket</a></li>
+<li><a href="#orgce3cce7">1.8.30. Poly-mode</a></li>
+<li><a href="#orgd06ff65">1.8.31. jupyter org</a></li>
+<li><a href="#orga6e44a2">1.8.32. ob-mermaid</a></li>
 </ul>
 </li>
-<li><a href="#org0849f7e">1.9. Fish</a>
+<li><a href="#orgd05e277">1.9. Fish</a>
 <ul>
-<li><a href="#orgcc4b65c">1.9.1. Oh my fish - omf</a></li>
+<li><a href="#org80ad5fa">1.9.1. Oh my fish - omf</a></li>
 </ul>
 </li>
-<li><a href="#orgefc8d3a">1.10. Bash</a>
+<li><a href="#org93f3cdb">1.10. Bash</a>
 <ul>
-<li><a href="#org98cbcdc">1.10.1. .bash<sub>profile</sub></a></li>
-<li><a href="#org97ea0aa">1.10.2. .bashrc</a></li>
+<li><a href="#orga3446e2">1.10.1. .bash<sub>profile</sub></a></li>
+<li><a href="#org1b97e7e">1.10.2. .bashrc</a></li>
 </ul>
 </li>
-<li><a href="#org976d715">1.11. i3</a>
+<li><a href="#orga40919d">1.11. i3</a>
 <ul>
-<li><a href="#org5a036ca">1.11.1. i3block bottom</a></li>
+<li><a href="#org60333d2">1.11.1. i3block bottom</a></li>
 </ul>
 </li>
-<li><a href="#orge3cb4a7">1.12. Neo vim</a></li>
-<li><a href="#orgbd2ba17">1.13. Tmux</a>
+<li><a href="#org95b3a86">1.12. Neo vim</a></li>
+<li><a href="#orga94ad68">1.13. Tmux</a>
 <ul>
-<li><a href="#orgb998dcf">1.13.1. Tmux.conf remote</a></li>
-<li><a href="#org953003f">1.13.2. Tmux.conf.local</a></li>
+<li><a href="#org1ae1b2f">1.13.1. Tmux.conf remote</a></li>
+<li><a href="#orgf31d150">1.13.2. Tmux.conf.local</a></li>
 </ul>
 </li>
-<li><a href="#org72eeb58">1.14. IdeaVimrc</a></li>
-<li><a href="#org28f8249">1.15. w3m-setting</a></li>
-<li><a href="#orga87e182">1.16. Fisher</a></li>
-<li><a href="#org787a892">1.17. Zsh</a></li>
-<li><a href="#orge60b8cd">1.18. Script</a>
+<li><a href="#org1e43158">1.14. IdeaVimrc</a></li>
+<li><a href="#orgaeaacd4">1.15. w3m-setting</a></li>
+<li><a href="#org5d39f52">1.16. Fisher</a></li>
+<li><a href="#orgecd6e9a">1.17. Zsh</a></li>
+<li><a href="#orgf8a76e8">1.18. Script</a>
 <ul>
-<li><a href="#org31fc66d">1.18.1. emacs-eshell-toggle.sh</a></li>
-<li><a href="#org418ce17">1.18.2. emacs-vterm-toggle.sh</a></li>
-<li><a href="#orgd2a2598">1.18.3. emacs-capture-code</a></li>
-<li><a href="#org7341d1a">1.18.4. emacs-capture-link.sh</a></li>
-<li><a href="#org1ba44cf">1.18.5. emacs-caoture-markdown.sh</a></li>
-<li><a href="#orgf0e5b32">1.18.6. log-notify-send.sh</a></li>
-<li><a href="#org99bf81e">1.18.7. join-two-double-lines.vim</a></li>
+<li><a href="#orgee37711">1.18.1. emacs-eshell-toggle.sh</a></li>
+<li><a href="#orga230493">1.18.2. emacs-vterm-toggle.sh</a></li>
+<li><a href="#org82fdedf">1.18.3. emacs-capture-code</a></li>
+<li><a href="#orga896cbb">1.18.4. emacs-capture-link.sh</a></li>
+<li><a href="#org6d2e3cf">1.18.5. emacs-caoture-markdown.sh</a></li>
+<li><a href="#orgb4be26b">1.18.6. log-notify-send.sh</a></li>
+<li><a href="#org8900c20">1.18.7. join-two-double-lines.vim</a></li>
 </ul>
 </li>
-<li><a href="#orgd893126">1.19. Kitty config</a></li>
-<li><a href="#orgf6aa8cf">1.20. Go cheat</a></li>
-<li><a href="#orgf729aff">1.21. makem.sh</a>
+<li><a href="#org9f25423">1.19. Kitty config</a></li>
+<li><a href="#orgbe79a84">1.20. Go cheat</a></li>
+<li><a href="#org271a848">1.21. makem.sh</a>
 <ul>
-<li><a href="#org8e0273c">1.21.1. makem.sh</a></li>
-<li><a href="#orgb6bd1ea">1.21.2. makefile</a></li>
+<li><a href="#org943c2d5">1.21.1. makem.sh</a></li>
+<li><a href="#org9e969a1">1.21.2. makefile</a></li>
 </ul>
 </li>
-<li><a href="#orgf909b84">1.22. Emacs cheat</a></li>
-<li><a href="#orgc3457b2">1.23. Vifm</a></li>
-<li><a href="#orgf959d4f">1.24. newsboat</a></li>
-<li><a href="#org2d01e25">1.25. scratch</a></li>
-<li><a href="#org9be8f60">1.26. Xonsh</a></li>
-<li><a href="#orgf8d8909">1.27. Scratch.el</a></li>
+<li><a href="#org957b250">1.22. Emacs cheat</a></li>
+<li><a href="#orge89bbfc">1.23. Vifm</a></li>
+<li><a href="#orge94d474">1.24. newsboat</a></li>
+<li><a href="#org83e3916">1.25. scratch</a></li>
+<li><a href="#org31cb423">1.26. Xonsh</a></li>
+<li><a href="#orgda35baa">1.27. Scratch.el</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgc72d659" class="outline-2">
-<h2 id="orgc72d659"><span class="section-number-2">1.</span> My dots files&#xa0;&#xa0;&#xa0;<span class="tag"><span class="TOC_3_org">TOC_3_org</span>&#xa0;<span class="QUOTE">QUOTE</span></span></h2>
+<div id="outline-container-orgb4af8ce" class="outline-2">
+<h2 id="orgb4af8ce"><span class="section-number-2">1.</span> My dots files&#xa0;&#xa0;&#xa0;<span class="tag"><span class="TOC_3_org">TOC_3_org</span>&#xa0;<span class="QUOTE">QUOTE</span></span></h2>
 <div class="outline-text-2" id="text-1">
 <blockquote>
 <ul class="org-ul">
-<li><a href="#org400cb9f">config.el</a></li>
-<li><a href="#orga7a2b39">start.el</a></li>
-<li><a href="#org1faf6de">middleware.el</a></li>
-<li><a href="#orgd7477bd">end.el</a></li>
-<li><a href="#orgf0d5520">Init.el</a></li>
-<li><a href="#orgd79058e">Package.el</a></li>
-<li><a href="#org7bc2092">External package</a>
+<li><a href="#org5352557">config.el</a></li>
+<li><a href="#orgc0e7913">start.el</a></li>
+<li><a href="#org8a89973">middleware.el</a></li>
+<li><a href="#orgf13939f">end.el</a></li>
+<li><a href="#orgcc06048">Init.el</a></li>
+<li><a href="#org6e22e43">Package.el</a></li>
+<li><a href="#org88b4b6a">External package</a>
 <ul class="org-ul">
-<li><a href="#org7d246d8">Academic.el</a></li>
-<li><a href="#orga755c35">other</a></li>
-<li><a href="#org13bfe0c">Vermin/capture</a></li>
-<li><a href="#org1a0ce05">Vterm</a></li>
-<li><a href="#orgb3cd753">User and email configure</a></li>
-<li><a href="#org60a5b1a">font and theme configure</a></li>
-<li><a href="#org1cc05c0">Org.el</a></li>
-<li><a href="#org2726ce9">Lisp.el</a></li>
+<li><a href="#orgc87f42f">Academic.el</a></li>
+<li><a href="#orga015e09">other</a></li>
+<li><a href="#orgf364fab">Vermin/capture</a></li>
+<li><a href="#org9370d17">Vterm</a></li>
+<li><a href="#org2543441">User and email configure</a></li>
+<li><a href="#org7c51baa">font and theme configure</a></li>
+<li><a href="#orgbba789d">Org.el</a></li>
+<li><a href="#orgaf9dd96">Lisp.el</a></li>
 </ul></li>
-<li><a href="#org1a98797">Custom.el</a>
+<li><a href="#orgf4a71da">Custom.el</a>
 <ul class="org-ul">
-<li><a href="#orge836b10">Kmacro menu</a></li>
-<li><a href="#orgd138e35">org-babel-tangle-jump</a></li>
-<li><a href="#orgfcc3d02">Emacs everywhere</a></li>
-<li><a href="#org55c03f6">Hydra buffer menu</a></li>
-<li><a href="#orgc585bcf">Topsy</a></li>
-<li><a href="#orgbec2dc4">Org sticky header</a></li>
-<li><a href="#org222963b">org sidebar</a></li>
-<li><a href="#org8caea1d">Pop rule for man page</a></li>
-<li><a href="#org033647e">Modus theme</a></li>
-<li><a href="#orgc6de568">Flycheck</a></li>
-<li><a href="#org2133cdb">Nov</a></li>
-<li><a href="#org4e0a7e3">Wolfram-mode</a></li>
-<li><a href="#orgc1b40d7">Outshine</a></li>
-<li><a href="#orgd7ecd96">Websocket</a></li>
-<li><a href="#org1d26190">Org-roam-ui</a></li>
-<li><a href="#orgcf6c29b">Yequake</a></li>
-<li><a href="#orge5a66a8">unfill-region</a></li>
-<li><a href="#orgee16823">binding</a></li>
-<li><a href="#org1a0bc26">Exec path from cell</a></li>
-<li><a href="#orged57287">Asciidoc</a></li>
-<li><a href="#org980690a">copilot</a></li>
-<li><a href="#org2bd3005">dired narrow</a></li>
-<li><a href="#orgf78dcb7">ob-http</a></li>
-<li><a href="#org610f962">word-wrap</a></li>
-<li><a href="#org0131aef">save bookmark hook</a></li>
-<li><a href="#org9c53fbe">eaf</a></li>
-<li><a href="#org934260c">Org scrum</a></li>
-<li><a href="#org6273b88">orgaggregate</a></li>
-<li><a href="#org2502194">Racket</a></li>
-<li><a href="#orgfc88191">Poly-mode</a></li>
-<li><a href="#orgd731806">jupyter org</a></li>
-<li><a href="#org7db46a5">ob-mermaid</a></li>
+<li><a href="#org63cf86a">Kmacro menu</a></li>
+<li><a href="#org3e0a508">org-babel-tangle-jump</a></li>
+<li><a href="#org07c4b5d">Emacs everywhere</a></li>
+<li><a href="#org08eb276">Hydra buffer menu</a></li>
+<li><a href="#org98aac67">Topsy</a></li>
+<li><a href="#orgd50cf00">Org sticky header</a></li>
+<li><a href="#orgc86b60d">org sidebar</a></li>
+<li><a href="#org8628f81">Pop rule for man page</a></li>
+<li><a href="#orgc8ec174">Modus theme</a></li>
+<li><a href="#org4a17887">Flycheck</a></li>
+<li><a href="#org03d1cbe">Nov</a></li>
+<li><a href="#org3f32200">Wolfram-mode</a></li>
+<li><a href="#org1002b02">Outshine</a></li>
+<li><a href="#org537a9f0">Websocket</a></li>
+<li><a href="#org46970ea">Org-roam-ui</a></li>
+<li><a href="#org2eea1db">Yequake</a></li>
+<li><a href="#orgf6830f5">unfill-region</a></li>
+<li><a href="#orgbb9191d">binding</a></li>
+<li><a href="#orgbd37ae9">Exec path from cell</a></li>
+<li><a href="#org1b14243">Asciidoc</a></li>
+<li><a href="#org6ba70e6">copilot</a></li>
+<li><a href="#org03969af">dired narrow</a></li>
+<li><a href="#org794e862">ob-http</a></li>
+<li><a href="#org99a1da3">word-wrap</a></li>
+<li><a href="#org9de3f1e">save bookmark hook</a></li>
+<li><a href="#org04ce239">eaf</a></li>
+<li><a href="#orgc384599">Org scrum</a></li>
+<li><a href="#org67f1275">orgaggregate</a></li>
+<li><a href="#orgc1c2edc">Racket</a></li>
+<li><a href="#orgce3cce7">Poly-mode</a></li>
+<li><a href="#orgd06ff65">jupyter org</a></li>
+<li><a href="#orga6e44a2">ob-mermaid</a></li>
 </ul></li>
-<li><a href="#org0849f7e">Fish</a>
+<li><a href="#orgd05e277">Fish</a>
 <ul class="org-ul">
-<li><a href="#orgcc4b65c">Oh my fish - omf</a></li>
+<li><a href="#org80ad5fa">Oh my fish - omf</a></li>
 </ul></li>
-<li><a href="#orgefc8d3a">Bash</a>
+<li><a href="#org93f3cdb">Bash</a>
 <ul class="org-ul">
-<li><a href="#org98cbcdc">.bash<sub>profile</sub></a></li>
-<li><a href="#org97ea0aa">.bashrc</a></li>
+<li><a href="#orga3446e2">.bash<sub>profile</sub></a></li>
+<li><a href="#org1b97e7e">.bashrc</a></li>
 </ul></li>
-<li><a href="#org976d715">i3</a>
+<li><a href="#orga40919d">i3</a>
 <ul class="org-ul">
-<li><a href="#org5a036ca">i3block bottom</a></li>
+<li><a href="#org60333d2">i3block bottom</a></li>
 </ul></li>
-<li><a href="#orge3cb4a7">Neo vim</a></li>
-<li><a href="#orgbd2ba17">Tmux</a>
+<li><a href="#org95b3a86">Neo vim</a></li>
+<li><a href="#orga94ad68">Tmux</a>
 <ul class="org-ul">
-<li><a href="#orgb998dcf">Tmux.conf remote</a></li>
-<li><a href="#org953003f">Tmux.conf.local</a></li>
+<li><a href="#org1ae1b2f">Tmux.conf remote</a></li>
+<li><a href="#orgf31d150">Tmux.conf.local</a></li>
 </ul></li>
-<li><a href="#org72eeb58">IdeaVimrc</a></li>
-<li><a href="#org28f8249">w3m-setting</a></li>
-<li><a href="#orga87e182">Fisher</a></li>
-<li><a href="#org787a892">Zsh</a></li>
-<li><a href="#orge60b8cd">Script</a>
+<li><a href="#org1e43158">IdeaVimrc</a></li>
+<li><a href="#orgaeaacd4">w3m-setting</a></li>
+<li><a href="#org5d39f52">Fisher</a></li>
+<li><a href="#orgecd6e9a">Zsh</a></li>
+<li><a href="#orgf8a76e8">Script</a>
 <ul class="org-ul">
-<li><a href="#org31fc66d">emacs-eshell-toggle.sh</a></li>
-<li><a href="#org418ce17">emacs-vterm-toggle.sh</a></li>
-<li><a href="#orgd2a2598">emacs-capture-code</a></li>
-<li><a href="#org7341d1a">emacs-capture-link.sh</a></li>
-<li><a href="#org1ba44cf">emacs-caoture-markdown.sh</a></li>
-<li><a href="#orgf0e5b32">log-notify-send.sh</a></li>
-<li><a href="#org99bf81e">join-two-double-lines.vim</a></li>
+<li><a href="#orgee37711">emacs-eshell-toggle.sh</a></li>
+<li><a href="#orga230493">emacs-vterm-toggle.sh</a></li>
+<li><a href="#org82fdedf">emacs-capture-code</a></li>
+<li><a href="#orga896cbb">emacs-capture-link.sh</a></li>
+<li><a href="#org6d2e3cf">emacs-caoture-markdown.sh</a></li>
+<li><a href="#orgb4be26b">log-notify-send.sh</a></li>
+<li><a href="#org8900c20">join-two-double-lines.vim</a></li>
 </ul></li>
-<li><a href="#orgd893126">Kitty config</a></li>
-<li><a href="#orgf6aa8cf">Go cheat</a></li>
-<li><a href="#orgf729aff">makem.sh</a>
+<li><a href="#org9f25423">Kitty config</a></li>
+<li><a href="#orgbe79a84">Go cheat</a></li>
+<li><a href="#org271a848">makem.sh</a>
 <ul class="org-ul">
-<li><a href="#orgf729aff">makem.sh</a></li>
-<li><a href="#orgb6bd1ea">makefile</a></li>
+<li><a href="#org271a848">makem.sh</a></li>
+<li><a href="#org9e969a1">makefile</a></li>
 </ul></li>
-<li><a href="#orgf909b84">Emacs cheat</a></li>
-<li><a href="#orgc3457b2">Vifm</a></li>
-<li><a href="#orgf959d4f">newsboat</a></li>
-<li><a href="#org2d01e25">scratch</a></li>
-<li><a href="#org9be8f60">Xonsh</a></li>
-<li><a href="#orgf8d8909">Scratch.el</a></li>
+<li><a href="#org957b250">Emacs cheat</a></li>
+<li><a href="#orge89bbfc">Vifm</a></li>
+<li><a href="#orge94d474">newsboat</a></li>
+<li><a href="#org83e3916">scratch</a></li>
+<li><a href="#org31cb423">Xonsh</a></li>
+<li><a href="#orgda35baa">Scratch.el</a></li>
 </ul>
 </blockquote>
 </div>
 
-<div id="outline-container-org400cb9f" class="outline-3">
-<h3 id="org400cb9f"><span class="section-number-3">1.1.</span> config.el</h3>
+<div id="outline-container-org5352557" class="outline-3">
+<h3 id="org5352557"><span class="section-number-3">1.1.</span> config.el</h3>
 <div class="outline-text-3" id="text-1-1">
 <div class="org-src-container">
 <pre class="src src-elisp">;;; <span style="color: #b22222;">$DOOMDIR/config.el -*- lexical-binding: t; -*-</span>
@@ -254,8 +254,8 @@
 </div>
 </div>
 </div>
-<div id="outline-container-orga7a2b39" class="outline-3">
-<h3 id="orga7a2b39"><span class="section-number-3">1.2.</span> start.el</h3>
+<div id="outline-container-orgc0e7913" class="outline-3">
+<h3 id="orgc0e7913"><span class="section-number-3">1.2.</span> start.el</h3>
 <div class="outline-text-3" id="text-1-2">
 <div class="org-src-container">
 <pre class="src src-elisp">(doom-load-envvars-file <span style="color: #8b2252;">"~/.doom.d/myenv"</span>)
@@ -266,8 +266,8 @@
 </div>
 </div>
 </div>
-<div id="outline-container-org1faf6de" class="outline-3">
-<h3 id="org1faf6de"><span class="section-number-3">1.3.</span> middleware.el</h3>
+<div id="outline-container-org8a89973" class="outline-3">
+<h3 id="org8a89973"><span class="section-number-3">1.3.</span> middleware.el</h3>
 <div class="outline-text-3" id="text-1-3">
 <div class="org-src-container">
 <pre class="src src-elisp">(load! <span style="color: #8b2252;">"org.el"</span> <span style="color: #8b2252;">"~/.doom.d/tangle"</span>)
@@ -282,8 +282,8 @@
 </div>
 </div>
 </div>
-<div id="outline-container-orgd7477bd" class="outline-3">
-<h3 id="orgd7477bd"><span class="section-number-3">1.4.</span> end.el</h3>
+<div id="outline-container-orgf13939f" class="outline-3">
+<h3 id="orgf13939f"><span class="section-number-3">1.4.</span> end.el</h3>
 <div class="outline-text-3" id="text-1-4">
 <div class="org-src-container">
 <pre class="src src-elisp">(load! <span style="color: #8b2252;">"theme.el"</span> <span style="color: #8b2252;">"~/.doom.d/tangle"</span>)
@@ -301,8 +301,8 @@
 </div>
 
 
-<div id="outline-container-orgf0d5520" class="outline-3">
-<h3 id="orgf0d5520"><span class="section-number-3">1.5.</span> Init.el</h3>
+<div id="outline-container-orgcc06048" class="outline-3">
+<h3 id="orgcc06048"><span class="section-number-3">1.5.</span> Init.el</h3>
 <div class="outline-text-3" id="text-1-5">
 <div class="org-src-container">
 <pre class="src src-elisp">;;; <span style="color: #b22222;">init.el -*- lexical-binding: t; -*-</span>
@@ -506,8 +506,8 @@
 </div>
 </div>
 </div>
-<div id="outline-container-orgd79058e" class="outline-3">
-<h3 id="orgd79058e"><span class="section-number-3">1.6.</span> Package.el</h3>
+<div id="outline-container-org6e22e43" class="outline-3">
+<h3 id="org6e22e43"><span class="section-number-3">1.6.</span> Package.el</h3>
 <div class="outline-text-3" id="text-1-6">
 <div class="org-src-container">
 <pre class="src src-elisp">;; <span style="color: #b22222;">-*- no-byte-compile: t; -*-</span>
@@ -733,12 +733,12 @@
 </div>
 </div>
 </div>
-<div id="outline-container-org7bc2092" class="outline-3">
-<h3 id="org7bc2092"><span class="section-number-3">1.7.</span> External package</h3>
+<div id="outline-container-org88b4b6a" class="outline-3">
+<h3 id="org88b4b6a"><span class="section-number-3">1.7.</span> External package</h3>
 <div class="outline-text-3" id="text-1-7">
 </div>
-<div id="outline-container-org7d246d8" class="outline-4">
-<h4 id="org7d246d8"><span class="section-number-4">1.7.1.</span> Academic.el</h4>
+<div id="outline-container-orgc87f42f" class="outline-4">
+<h4 id="orgc87f42f"><span class="section-number-4">1.7.1.</span> Academic.el</h4>
 <div class="outline-text-4" id="text-1-7-1">
 <div class="org-src-container">
 <pre class="src src-elisp">(use-package! citar
@@ -778,8 +778,8 @@
 </div>
 </div>
 </div>
-<div id="outline-container-orga755c35" class="outline-4">
-<h4 id="orga755c35"><span class="section-number-4">1.7.2.</span> other</h4>
+<div id="outline-container-orga015e09" class="outline-4">
+<h4 id="orga015e09"><span class="section-number-4">1.7.2.</span> other</h4>
 <div class="outline-text-4" id="text-1-7-2">
 <div class="org-src-container">
 <pre class="src src-elisp">(use-package! which-key
@@ -795,8 +795,8 @@
 </div>
 </div>
 </div>
-<div id="outline-container-org13bfe0c" class="outline-4">
-<h4 id="org13bfe0c"><span class="section-number-4">1.7.3.</span> Vermin/capture</h4>
+<div id="outline-container-orgf364fab" class="outline-4">
+<h4 id="orgf364fab"><span class="section-number-4">1.7.3.</span> Vermin/capture</h4>
 <div class="outline-text-4" id="text-1-7-3">
 <div class="org-src-container">
 <pre class="src src-elisp">(<span style="color: #a020f0;">defun</span> <span style="color: #0000ff;">vermin/org-factor-goto-file</span> ()
@@ -931,8 +931,8 @@
 </div>
 </div>
 </div>
-<div id="outline-container-org1a0ce05" class="outline-4">
-<h4 id="org1a0ce05"><span class="section-number-4">1.7.4.</span> Vterm</h4>
+<div id="outline-container-org9370d17" class="outline-4">
+<h4 id="org9370d17"><span class="section-number-4">1.7.4.</span> Vterm</h4>
 <div class="outline-text-4" id="text-1-7-4">
 <div class="org-src-container">
 <pre class="src src-elisp">(use-package! vterm
@@ -949,7 +949,7 @@
 
 
 <div class="org-src-container">
-<pre class="src src-elisp" id="org7b00e6d">(use-package! org-download
+<pre class="src src-elisp" id="org69926c3">(use-package! org-download
   <span style="color: #483d8b;">:config</span> (<span style="color: #a020f0;">setq-default</span> org-download-image-dir <span style="color: #8b2252;">"./images"</span>)(setq! org-download-method 'directory)(setq! org-download-link-format <span style="color: #8b2252;">"[[file:images/%s]]\n"</span>))
 
 ;; <span style="color: #b22222;">(use-package! deft</span>
@@ -963,14 +963,14 @@
 </div>
 </div>
 </div>
-<div id="outline-container-orgb3cd753" class="outline-4">
-<h4 id="orgb3cd753"><span class="section-number-4">1.7.5.</span> User and email configure</h4>
+<div id="outline-container-org2543441" class="outline-4">
+<h4 id="org2543441"><span class="section-number-4">1.7.5.</span> User and email configure</h4>
 <div class="outline-text-4" id="text-1-7-5">
 <p>
 User and email   configure go here
 </p>
 <div class="org-src-container">
-<pre class="src src-elisp" id="org1cbf134">;;; <span style="color: #b22222;">-*- lexical-binding: t; -*-</span>
+<pre class="src src-elisp" id="org8fec542">;;; <span style="color: #b22222;">-*- lexical-binding: t; -*-</span>
 ;; <span style="color: #b22222;">Some functionality uses this to identify you, e.g. GPG configuration, email</span>
 ;; <span style="color: #b22222;">clients, file templates and snippets.</span>
 (setq! user-full-name <span style="color: #8b2252;">"nhannht"</span> user-mail-address
@@ -981,11 +981,11 @@ User and email   configure go here
 </div>
 </div>
 </div>
-<div id="outline-container-org60a5b1a" class="outline-4">
-<h4 id="org60a5b1a"><span class="section-number-4">1.7.6.</span> font and theme configure</h4>
+<div id="outline-container-org7c51baa" class="outline-4">
+<h4 id="org7c51baa"><span class="section-number-4">1.7.6.</span> font and theme configure</h4>
 <div class="outline-text-4" id="text-1-7-6">
 <div class="org-src-container">
-<pre class="src src-elisp" id="orgdd41c3b">;; <span style="color: #b22222;">Doom exposes five (optional) variables for controlling fonts in Doom. Here</span>
+<pre class="src src-elisp" id="orgd4deeb5">;; <span style="color: #b22222;">Doom exposes five (optional) variables for controlling fonts in Doom. Here</span>
 ;; <span style="color: #b22222;">are the three important ones:</span>
 ;;
 ;; <span style="color: #b22222;">+ `</span><span style="color: #008b8b;">doom-font</span><span style="color: #b22222;">'</span>
@@ -1105,8 +1105,8 @@ User and email   configure go here
 </div>
 </div>
 </div>
-<div id="outline-container-org1cc05c0" class="outline-4">
-<h4 id="org1cc05c0"><span class="section-number-4">1.7.7.</span> Org.el</h4>
+<div id="outline-container-orgbba789d" class="outline-4">
+<h4 id="orgbba789d"><span class="section-number-4">1.7.7.</span> Org.el</h4>
 <div class="outline-text-4" id="text-1-7-7">
 <div class="org-src-container">
 <pre class="src src-elisp">;; <span style="color: #b22222;">If you use `</span><span style="color: #008b8b;">org</span><span style="color: #b22222;">' and don't want your org files in the default location below,</span>
@@ -1132,8 +1132,8 @@ User and email   configure go here
 </div>
 </div>
 
-<div id="outline-container-org2726ce9" class="outline-4">
-<h4 id="org2726ce9"><span class="section-number-4">1.7.8.</span> Lisp.el</h4>
+<div id="outline-container-orgaf9dd96" class="outline-4">
+<h4 id="orgaf9dd96"><span class="section-number-4">1.7.8.</span> Lisp.el</h4>
 <div class="outline-text-4" id="text-1-7-8">
 <div class="org-src-container">
 <pre class="src src-elisp">(after! smartparens
@@ -1166,15 +1166,15 @@ User and email   configure go here
 </div>
 </div>
 </div>
-<div id="outline-container-org1a98797" class="outline-3">
-<h3 id="org1a98797"><span class="section-number-3">1.8.</span> Custom.el</h3>
+<div id="outline-container-orgf4a71da" class="outline-3">
+<h3 id="orgf4a71da"><span class="section-number-3">1.8.</span> Custom.el</h3>
 <div class="outline-text-3" id="text-1-8">
 <p>
 All minor package that install from community go here
 </p>
 </div>
-<div id="outline-container-orge836b10" class="outline-4">
-<h4 id="orge836b10"><span class="section-number-4">1.8.1.</span> Kmacro menu</h4>
+<div id="outline-container-org63cf86a" class="outline-4">
+<h4 id="org63cf86a"><span class="section-number-4">1.8.1.</span> Kmacro menu</h4>
 <div class="outline-text-4" id="text-1-8-1">
 <div class="org-src-container">
 <pre class="src src-elisp">(<span style="color: #a020f0;">easy-menu-define</span> kmacro-menu
@@ -1199,8 +1199,8 @@ All minor package that install from community go here
 </div>
 </div>
 </div>
-<div id="outline-container-orgd138e35" class="outline-4">
-<h4 id="orgd138e35"><span class="section-number-4">1.8.2.</span> org-babel-tangle-jump</h4>
+<div id="outline-container-org3e0a508" class="outline-4">
+<h4 id="org3e0a508"><span class="section-number-4">1.8.2.</span> org-babel-tangle-jump</h4>
 <div class="outline-text-4" id="text-1-8-2">
 <p>
 Jump from org source file to tangled destination file, because org still don't have a built-in way to do it"
@@ -1231,8 +1231,8 @@ Jump from org source file to tangled destination file, because org still don't h
 </div>
 </div>
 </div>
-<div id="outline-container-orgfcc3d02" class="outline-4">
-<h4 id="orgfcc3d02"><span class="section-number-4">1.8.3.</span> Emacs everywhere</h4>
+<div id="outline-container-org07c4b5d" class="outline-4">
+<h4 id="org07c4b5d"><span class="section-number-4">1.8.3.</span> Emacs everywhere</h4>
 <div class="outline-text-4" id="text-1-8-3">
 <div class="org-src-container">
 <pre class="src src-elisp">(setenv <span style="color: #8b2252;">"NODE_PATH"</span> <span style="color: #8b2252;">"~/IdeaProjects/turndown-plugin-gfm/node_modules/"</span>)
@@ -1271,8 +1271,8 @@ Jump from org source file to tangled destination file, because org still don't h
 </div>
 </div>
 </div>
-<div id="outline-container-org55c03f6" class="outline-4">
-<h4 id="org55c03f6"><span class="section-number-4">1.8.4.</span> Hydra buffer menu</h4>
+<div id="outline-container-org08eb276" class="outline-4">
+<h4 id="org08eb276"><span class="section-number-4">1.8.4.</span> Hydra buffer menu</h4>
 <div class="outline-text-4" id="text-1-8-4">
 <div class="org-src-container">
 <pre class="src src-elisp">(defhydra hydra-buffer-menu (<span style="color: #483d8b;">:color</span> pink
@@ -1308,8 +1308,8 @@ Jump from org source file to tangled destination file, because org still don't h
 </div>
 </div>
 </div>
-<div id="outline-container-orgc585bcf" class="outline-4">
-<h4 id="orgc585bcf"><span class="section-number-4">1.8.5.</span> Topsy</h4>
+<div id="outline-container-org98aac67" class="outline-4">
+<h4 id="org98aac67"><span class="section-number-4">1.8.5.</span> Topsy</h4>
 <div class="outline-text-4" id="text-1-8-5">
 <div class="org-src-container">
 <pre class="src src-elisp">(use-package! topsy
@@ -1319,11 +1319,11 @@ Jump from org source file to tangled destination file, because org still don't h
 </div>
 </div>
 </div>
-<div id="outline-container-orgbec2dc4" class="outline-4">
-<h4 id="orgbec2dc4"><span class="section-number-4">1.8.6.</span> Org sticky header</h4>
+<div id="outline-container-orgd50cf00" class="outline-4">
+<h4 id="orgd50cf00"><span class="section-number-4">1.8.6.</span> Org sticky header</h4>
 </div>
-<div id="outline-container-org222963b" class="outline-4">
-<h4 id="org222963b"><span class="section-number-4">1.8.7.</span> org sidebar</h4>
+<div id="outline-container-orgc86b60d" class="outline-4">
+<h4 id="orgc86b60d"><span class="section-number-4">1.8.7.</span> org sidebar</h4>
 <div class="outline-text-4" id="text-1-8-7">
 <div class="org-src-container">
 <pre class="src src-elisp">(use-package org-sidebar
@@ -1332,8 +1332,8 @@ Jump from org source file to tangled destination file, because org still don't h
 </div>
 </div>
 </div>
-<div id="outline-container-org8caea1d" class="outline-4">
-<h4 id="org8caea1d"><span class="section-number-4">1.8.8.</span> Pop rule for man page</h4>
+<div id="outline-container-org8628f81" class="outline-4">
+<h4 id="org8628f81"><span class="section-number-4">1.8.8.</span> Pop rule for man page</h4>
 <div class="outline-text-4" id="text-1-8-8">
 <div class="org-src-container">
 <pre class="src src-elisp">;; <span style="color: #b22222;">(map! :leader</span>
@@ -1354,8 +1354,8 @@ Jump from org source file to tangled destination file, because org still don't h
 </div>
 </div>
 </div>
-<div id="outline-container-org033647e" class="outline-4">
-<h4 id="org033647e"><span class="section-number-4">1.8.9.</span> Modus theme</h4>
+<div id="outline-container-orgc8ec174" class="outline-4">
+<h4 id="orgc8ec174"><span class="section-number-4">1.8.9.</span> Modus theme</h4>
 <div class="outline-text-4" id="text-1-8-9">
 <div class="org-src-container">
 <pre class="src src-elisp">(use-package! modus-themes
@@ -1454,8 +1454,8 @@ Jump from org source file to tangled destination file, because org still don't h
 </div>
 </div>
 </div>
-<div id="outline-container-orgc6de568" class="outline-4">
-<h4 id="orgc6de568"><span class="section-number-4">1.8.10.</span> Flycheck</h4>
+<div id="outline-container-org4a17887" class="outline-4">
+<h4 id="org4a17887"><span class="section-number-4">1.8.10.</span> Flycheck</h4>
 <div class="outline-text-4" id="text-1-8-10">
 <div class="org-src-container">
 <pre class="src src-elisp">(use-package! flycheck
@@ -1465,8 +1465,8 @@ Jump from org source file to tangled destination file, because org still don't h
 </div>
 </div>
 </div>
-<div id="outline-container-org2133cdb" class="outline-4">
-<h4 id="org2133cdb"><span class="section-number-4">1.8.11.</span> Nov</h4>
+<div id="outline-container-org03d1cbe" class="outline-4">
+<h4 id="org03d1cbe"><span class="section-number-4">1.8.11.</span> Nov</h4>
 <div class="outline-text-4" id="text-1-8-11">
 <div class="org-src-container">
 <pre class="src src-elisp">(use-package! nov
@@ -1476,8 +1476,8 @@ Jump from org source file to tangled destination file, because org still don't h
 </div>
 </div>
 </div>
-<div id="outline-container-org4e0a7e3" class="outline-4">
-<h4 id="org4e0a7e3"><span class="section-number-4">1.8.12.</span> Wolfram-mode</h4>
+<div id="outline-container-org3f32200" class="outline-4">
+<h4 id="org3f32200"><span class="section-number-4">1.8.12.</span> Wolfram-mode</h4>
 <div class="outline-text-4" id="text-1-8-12">
 <div class="org-src-container">
 <pre class="src src-elisp">;; <span style="color: #b22222;">(use-package! wolfram-mode</span>
@@ -1511,8 +1511,8 @@ Jump from org source file to tangled destination file, because org still don't h
 </div>
 </div>
 </div>
-<div id="outline-container-orgc1b40d7" class="outline-4">
-<h4 id="orgc1b40d7"><span class="section-number-4">1.8.13.</span> Outshine</h4>
+<div id="outline-container-org1002b02" class="outline-4">
+<h4 id="org1002b02"><span class="section-number-4">1.8.13.</span> Outshine</h4>
 <div class="outline-text-4" id="text-1-8-13">
 <div class="org-src-container">
 <pre class="src src-elisp">(use-package! outshine
@@ -1521,8 +1521,8 @@ Jump from org source file to tangled destination file, because org still don't h
 </div>
 </div>
 </div>
-<div id="outline-container-orgd7ecd96" class="outline-4">
-<h4 id="orgd7ecd96"><span class="section-number-4">1.8.14.</span> Websocket</h4>
+<div id="outline-container-org537a9f0" class="outline-4">
+<h4 id="org537a9f0"><span class="section-number-4">1.8.14.</span> Websocket</h4>
 <div class="outline-text-4" id="text-1-8-14">
 <div class="org-src-container">
 <pre class="src src-elisp">(use-package! websocket
@@ -1531,8 +1531,8 @@ Jump from org source file to tangled destination file, because org still don't h
 </div>
 </div>
 </div>
-<div id="outline-container-org1d26190" class="outline-4">
-<h4 id="org1d26190"><span class="section-number-4">1.8.15.</span> Org-roam-ui</h4>
+<div id="outline-container-org46970ea" class="outline-4">
+<h4 id="org46970ea"><span class="section-number-4">1.8.15.</span> Org-roam-ui</h4>
 <div class="outline-text-4" id="text-1-8-15">
 <div class="org-src-container">
 <pre class="src src-elisp">( use-package! org-roam-ui
@@ -1556,8 +1556,8 @@ Jump from org source file to tangled destination file, because org still don't h
 </div>
 </div>
 </div>
-<div id="outline-container-orgcf6c29b" class="outline-4">
-<h4 id="orgcf6c29b"><span class="section-number-4">1.8.16.</span> Yequake</h4>
+<div id="outline-container-org2eea1db" class="outline-4">
+<h4 id="org2eea1db"><span class="section-number-4">1.8.16.</span> Yequake</h4>
 <div class="outline-text-4" id="text-1-8-16">
 <div class="org-src-container">
 <pre class="src src-elisp">(use-package! yequake
@@ -1577,8 +1577,8 @@ Jump from org source file to tangled destination file, because org still don't h
 </div>
 </div>
 </div>
-<div id="outline-container-orge5a66a8" class="outline-4">
-<h4 id="orge5a66a8"><span class="section-number-4">1.8.17.</span> unfill-region</h4>
+<div id="outline-container-orgf6830f5" class="outline-4">
+<h4 id="orgf6830f5"><span class="section-number-4">1.8.17.</span> unfill-region</h4>
 <div class="outline-text-4" id="text-1-8-17">
 <div class="org-src-container">
 <pre class="src src-elisp">(<span style="color: #a020f0;">defun</span> <span style="color: #0000ff;">vermin/unfill-region</span> (beg end)
@@ -1595,8 +1595,8 @@ Jump from org source file to tangled destination file, because org still don't h
 </div>
 </div>
 </div>
-<div id="outline-container-orgee16823" class="outline-4">
-<h4 id="orgee16823"><span class="section-number-4">1.8.18.</span> binding</h4>
+<div id="outline-container-orgbb9191d" class="outline-4">
+<h4 id="orgbb9191d"><span class="section-number-4">1.8.18.</span> binding</h4>
 <div class="outline-text-4" id="text-1-8-18">
 <div class="org-src-container">
 <pre class="src src-elisp">(use-package! emr)
@@ -1714,8 +1714,8 @@ Jump from org source file to tangled destination file, because org still don't h
 </div>
 </div>
 </div>
-<div id="outline-container-org1a0bc26" class="outline-4">
-<h4 id="org1a0bc26"><span class="section-number-4">1.8.19.</span> Exec path from cell</h4>
+<div id="outline-container-orgbd37ae9" class="outline-4">
+<h4 id="orgbd37ae9"><span class="section-number-4">1.8.19.</span> Exec path from cell</h4>
 <div class="outline-text-4" id="text-1-8-19">
 <div class="org-src-container">
 <pre class="src src-elisp">(use-package! exec-path-from-shell
@@ -1729,8 +1729,8 @@ Jump from org source file to tangled destination file, because org still don't h
 </div>
 </div>
 </div>
-<div id="outline-container-orged57287" class="outline-4">
-<h4 id="orged57287"><span class="section-number-4">1.8.20.</span> Asciidoc</h4>
+<div id="outline-container-org1b14243" class="outline-4">
+<h4 id="org1b14243"><span class="section-number-4">1.8.20.</span> Asciidoc</h4>
 <div class="outline-text-4" id="text-1-8-20">
 <div class="org-src-container">
 <pre class="src src-elisp">(use-package! adoc-mode
@@ -1747,8 +1747,8 @@ Jump from org source file to tangled destination file, because org still don't h
 </div>
 </div>
 </div>
-<div id="outline-container-org980690a" class="outline-4">
-<h4 id="org980690a"><span class="section-number-4">1.8.21.</span> copilot</h4>
+<div id="outline-container-org6ba70e6" class="outline-4">
+<h4 id="org6ba70e6"><span class="section-number-4">1.8.21.</span> copilot</h4>
 <div class="outline-text-4" id="text-1-8-21">
 <div class="org-src-container">
 <pre class="src src-elisp">(<span style="color: #a020f0;">defun</span> <span style="color: #0000ff;">my-tab</span> ()
@@ -1771,8 +1771,8 @@ Jump from org source file to tangled destination file, because org still don't h
 </div>
 </div>
 </div>
-<div id="outline-container-org2bd3005" class="outline-4">
-<h4 id="org2bd3005"><span class="section-number-4">1.8.22.</span> dired narrow</h4>
+<div id="outline-container-org03969af" class="outline-4">
+<h4 id="org03969af"><span class="section-number-4">1.8.22.</span> dired narrow</h4>
 <div class="outline-text-4" id="text-1-8-22">
 <div class="org-src-container">
 <pre class="src src-elisp">(use-package! dired-narrow
@@ -1885,8 +1885,8 @@ Jump from org source file to tangled destination file, because org still don't h
 </div>
 </div>
 </div>
-<div id="outline-container-orgf78dcb7" class="outline-4">
-<h4 id="orgf78dcb7"><span class="section-number-4">1.8.23.</span> ob-http</h4>
+<div id="outline-container-org794e862" class="outline-4">
+<h4 id="org794e862"><span class="section-number-4">1.8.23.</span> ob-http</h4>
 <div class="outline-text-4" id="text-1-8-23">
 <div class="org-src-container">
 <pre class="src src-elisp">(use-package! ob-http
@@ -1904,8 +1904,8 @@ Jump from org source file to tangled destination file, because org still don't h
 </div>
 </div>
 </div>
-<div id="outline-container-org610f962" class="outline-4">
-<h4 id="org610f962"><span class="section-number-4">1.8.24.</span> word-wrap</h4>
+<div id="outline-container-org99a1da3" class="outline-4">
+<h4 id="org99a1da3"><span class="section-number-4">1.8.24.</span> word-wrap</h4>
 <div class="outline-text-4" id="text-1-8-24">
 <div class="org-src-container">
 <pre class="src src-elisp">(add-to-list '+word-wrap-disabled-modes 'org-mode)
@@ -1916,8 +1916,8 @@ Jump from org source file to tangled destination file, because org still don't h
 </div>
 </div>
 </div>
-<div id="outline-container-org0131aef" class="outline-4">
-<h4 id="org0131aef"><span class="section-number-4">1.8.25.</span> save bookmark hook</h4>
+<div id="outline-container-org9de3f1e" class="outline-4">
+<h4 id="org9de3f1e"><span class="section-number-4">1.8.25.</span> save bookmark hook</h4>
 <div class="outline-text-4" id="text-1-8-25">
 <div class="org-src-container">
 <pre class="src src-elisp">(;; <span style="color: #b22222;">defun vermin/save-book-mark ()</span>
@@ -1937,8 +1937,8 @@ Jump from org source file to tangled destination file, because org still don't h
 </div>
 </div>
 </div>
-<div id="outline-container-org9c53fbe" class="outline-4">
-<h4 id="org9c53fbe"><span class="section-number-4">1.8.26.</span> eaf</h4>
+<div id="outline-container-org04ce239" class="outline-4">
+<h4 id="org04ce239"><span class="section-number-4">1.8.26.</span> eaf</h4>
 <div class="outline-text-4" id="text-1-8-26">
 <div class="org-src-container">
 <pre class="src src-elisp">;; <span style="color: #b22222;">(defun vermin--config-for-eaf ()</span>
@@ -2007,8 +2007,8 @@ Jump from org source file to tangled destination file, because org still don't h
 </div>
 </div>
 </div>
-<div id="outline-container-org934260c" class="outline-4">
-<h4 id="org934260c"><span class="section-number-4">1.8.27.</span> Org scrum</h4>
+<div id="outline-container-orgc384599" class="outline-4">
+<h4 id="orgc384599"><span class="section-number-4">1.8.27.</span> Org scrum</h4>
 <div class="outline-text-4" id="text-1-8-27">
 <div class="org-src-container">
 <pre class="src src-elisp">(use-package! org-scrum)
@@ -2016,8 +2016,8 @@ Jump from org source file to tangled destination file, because org still don't h
 </div>
 </div>
 </div>
-<div id="outline-container-org6273b88" class="outline-4">
-<h4 id="org6273b88"><span class="section-number-4">1.8.28.</span> orgaggregate</h4>
+<div id="outline-container-org67f1275" class="outline-4">
+<h4 id="org67f1275"><span class="section-number-4">1.8.28.</span> orgaggregate</h4>
 <div class="outline-text-4" id="text-1-8-28">
 <div class="org-src-container">
 <pre class="src src-elisp">(use-package! orgtbl-aggregate)
@@ -2030,8 +2030,8 @@ Jump from org source file to tangled destination file, because org still don't h
 </div>
 </div>
 </div>
-<div id="outline-container-org2502194" class="outline-4">
-<h4 id="org2502194"><span class="section-number-4">1.8.29.</span> Racket</h4>
+<div id="outline-container-orgc1c2edc" class="outline-4">
+<h4 id="orgc1c2edc"><span class="section-number-4">1.8.29.</span> Racket</h4>
 <div class="outline-text-4" id="text-1-8-29">
 <div class="org-src-container">
 <pre class="src src-elisp">(<span style="color: #a020f0;">defun</span> <span style="color: #0000ff;">racket-eldoc-set</span> ()
@@ -2053,8 +2053,8 @@ Jump from org source file to tangled destination file, because org still don't h
 </div>
 </div>
 </div>
-<div id="outline-container-orgfc88191" class="outline-4">
-<h4 id="orgfc88191"><span class="section-number-4">1.8.30.</span> Poly-mode</h4>
+<div id="outline-container-orgce3cce7" class="outline-4">
+<h4 id="orgce3cce7"><span class="section-number-4">1.8.30.</span> Poly-mode</h4>
 <div class="outline-text-4" id="text-1-8-30">
 <div class="org-src-container">
 <pre class="src src-elisp">(use-package! polymode
@@ -2102,8 +2102,8 @@ Jump from org source file to tangled destination file, because org still don't h
 </div>
 </div>
 </div>
-<div id="outline-container-orgd731806" class="outline-4">
-<h4 id="orgd731806"><span class="section-number-4">1.8.31.</span> jupyter org</h4>
+<div id="outline-container-orgd06ff65" class="outline-4">
+<h4 id="orgd06ff65"><span class="section-number-4">1.8.31.</span> jupyter org</h4>
 <div class="outline-text-4" id="text-1-8-31">
 <div class="org-src-container">
 <pre class="src src-elisp">;; <span style="color: #b22222;">(use-package! zmq</span>
@@ -2120,8 +2120,8 @@ Jump from org source file to tangled destination file, because org still don't h
 </div>
 </div>
 </div>
-<div id="outline-container-org7db46a5" class="outline-4">
-<h4 id="org7db46a5"><span class="section-number-4">1.8.32.</span> ob-mermaid</h4>
+<div id="outline-container-orga6e44a2" class="outline-4">
+<h4 id="orga6e44a2"><span class="section-number-4">1.8.32.</span> ob-mermaid</h4>
 <div class="outline-text-4" id="text-1-8-32">
 <div class="org-src-container">
 <pre class="src src-elisp">(use-package! ob-mermaid
@@ -2137,16 +2137,16 @@ Jump from org source file to tangled destination file, because org still don't h
 </div>
 </div>
 </div>
-<div id="outline-container-org0849f7e" class="outline-3">
-<h3 id="org0849f7e"><span class="section-number-3">1.9.</span> Fish</h3>
+<div id="outline-container-orgd05e277" class="outline-3">
+<h3 id="orgd05e277"><span class="section-number-3">1.9.</span> Fish</h3>
 <div class="outline-text-3" id="text-1-9">
 </div>
-<div id="outline-container-orgcc4b65c" class="outline-4">
-<h4 id="orgcc4b65c"><span class="section-number-4">1.9.1.</span> Oh my fish - omf</h4>
+<div id="outline-container-org80ad5fa" class="outline-4">
+<h4 id="org80ad5fa"><span class="section-number-4">1.9.1.</span> Oh my fish - omf</h4>
 <div class="outline-text-4" id="text-1-9-1">
 </div>
 <ol class="org-ol">
-<li><a id="org41980a8"></a>Init.fish<br>
+<li><a id="org4ff9063"></a>Init.fish<br>
 <div class="outline-text-5" id="text-1-9-1-1">
 <div class="org-src-container">
 <pre class="src src-fish"># fish_vi_key_bindings
@@ -2184,7 +2184,7 @@ source (/usr/bin/starship init fish --print-full-init | psub)
 </div>
 </div>
 </li>
-<li><a id="org4b63e29"></a>bundle.fish<br>
+<li><a id="org8c71380"></a>bundle.fish<br>
 <div class="outline-text-5" id="text-1-9-1-2">
 <div class="org-src-container">
 <pre class="src src-fish">package bass
@@ -2201,15 +2201,15 @@ theme default
 </ol>
 </div>
 </div>
-<div id="outline-container-orgefc8d3a" class="outline-3">
-<h3 id="orgefc8d3a"><span class="section-number-3">1.10.</span> Bash</h3>
+<div id="outline-container-org93f3cdb" class="outline-3">
+<h3 id="org93f3cdb"><span class="section-number-3">1.10.</span> Bash</h3>
 <div class="outline-text-3" id="text-1-10">
 <p>
 Because I am using <i>Manjaro</i>, I was rarely touch <i>.bashrc</i>, instead that I write my custom config to <i>.profile</i> as the main bash configuration file
 </p>
 </div>
-<div id="outline-container-org98cbcdc" class="outline-4">
-<h4 id="org98cbcdc"><span class="section-number-4">1.10.1.</span> .bash<sub>profile</sub></h4>
+<div id="outline-container-orga3446e2" class="outline-4">
+<h4 id="orga3446e2"><span class="section-number-4">1.10.1.</span> .bash<sub>profile</sub></h4>
 <div class="outline-text-4" id="text-1-10-1">
 <div class="org-src-container">
 <pre class="src src-shell"><span style="color: #483d8b;">alias</span> <span style="color: #a0522d;">vim</span>=nvim
@@ -2280,8 +2280,8 @@ Because I am using <i>Manjaro</i>, I was rarely touch <i>.bashrc</i>, instead th
 </div>
 </div>
 </div>
-<div id="outline-container-org97ea0aa" class="outline-4">
-<h4 id="org97ea0aa"><span class="section-number-4">1.10.2.</span> .bashrc</h4>
+<div id="outline-container-org1b97e7e" class="outline-4">
+<h4 id="org1b97e7e"><span class="section-number-4">1.10.2.</span> .bashrc</h4>
 <div class="outline-text-4" id="text-1-10-2">
 <div class="org-src-container">
 <pre class="src src-shell">#
@@ -2305,8 +2305,8 @@ Because I am using <i>Manjaro</i>, I was rarely touch <i>.bashrc</i>, instead th
 </div>
 </div>
 </div>
-<div id="outline-container-org976d715" class="outline-3">
-<h3 id="org976d715"><span class="section-number-3">1.11.</span> i3</h3>
+<div id="outline-container-orga40919d" class="outline-3">
+<h3 id="orga40919d"><span class="section-number-3">1.11.</span> i3</h3>
 <div class="outline-text-3" id="text-1-11">
 <p>
 I3 is my favorite WM, because it just works. I was also try other WM in the past. But now ticking with I3 is the best idea.
@@ -2885,8 +2885,8 @@ for_window [class="^.*"] border pixel 1
 </pre>
 </div>
 </div>
-<div id="outline-container-org5a036ca" class="outline-4">
-<h4 id="org5a036ca"><span class="section-number-4">1.11.1.</span> i3block bottom</h4>
+<div id="outline-container-org60333d2" class="outline-4">
+<h4 id="org60333d2"><span class="section-number-4">1.11.1.</span> i3block bottom</h4>
 <div class="outline-text-4" id="text-1-11-1">
 <div class="org-src-container">
 <pre class="src src-i3wm-config"># i3blocks config file changed for EndeavourOS-i3 setup
@@ -3068,8 +3068,8 @@ color=#717171
 </div>
 </div>
 </div>
-<div id="outline-container-orge3cb4a7" class="outline-3">
-<h3 id="orge3cb4a7"><span class="section-number-3">1.12.</span> Neo vim</h3>
+<div id="outline-container-org95b3a86" class="outline-3">
+<h3 id="org95b3a86"><span class="section-number-3">1.12.</span> Neo vim</h3>
 <div class="outline-text-3" id="text-1-12">
 <p>
 God, I love vim hacker, they are so attractive in someway, but I rarely use Vim
@@ -3817,12 +3817,12 @@ iabbrev intro_ &lt;CR&gt;
 </div>
 </div>
 </div>
-<div id="outline-container-orgbd2ba17" class="outline-3">
-<h3 id="orgbd2ba17"><span class="section-number-3">1.13.</span> Tmux</h3>
+<div id="outline-container-orga94ad68" class="outline-3">
+<h3 id="orga94ad68"><span class="section-number-3">1.13.</span> Tmux</h3>
 <div class="outline-text-3" id="text-1-13">
 </div>
-<div id="outline-container-orgb998dcf" class="outline-4">
-<h4 id="orgb998dcf"><span class="section-number-4">1.13.1.</span> Tmux.conf remote</h4>
+<div id="outline-container-org1ae1b2f" class="outline-4">
+<h4 id="org1ae1b2f"><span class="section-number-4">1.13.1.</span> Tmux.conf remote</h4>
 <div class="outline-text-4" id="text-1-13-1">
 <div class="org-src-container">
 <pre class="src src-shell">
@@ -3833,8 +3833,8 @@ iabbrev intro_ &lt;CR&gt;
 </div>
 </div>
 </div>
-<div id="outline-container-org953003f" class="outline-4">
-<h4 id="org953003f"><span class="section-number-4">1.13.2.</span> Tmux.conf.local</h4>
+<div id="outline-container-orgf31d150" class="outline-4">
+<h4 id="orgf31d150"><span class="section-number-4">1.13.2.</span> Tmux.conf.local</h4>
 <div class="outline-text-4" id="text-1-13-2">
 <div class="org-src-container">
 <pre class="src src-shell"># <span style="color: #b22222;">https://github.com/gpakosz/.tmux</span>
@@ -4126,8 +4126,8 @@ iabbrev intro_ &lt;CR&gt;
 </div>
 </div>
 </div>
-<div id="outline-container-org72eeb58" class="outline-3">
-<h3 id="org72eeb58"><span class="section-number-3">1.14.</span> IdeaVimrc</h3>
+<div id="outline-container-org1e43158" class="outline-3">
+<h3 id="org1e43158"><span class="section-number-3">1.14.</span> IdeaVimrc</h3>
 <div class="outline-text-3" id="text-1-14">
 <div class="org-src-container">
 <pre class="src src-vimrc">"" Source your .vimrc
@@ -4187,8 +4187,8 @@ set matchitset ideajoin
 </div>
 </div>
 </div>
-<div id="outline-container-org28f8249" class="outline-3">
-<h3 id="org28f8249"><span class="section-number-3">1.15.</span> w3m-setting</h3>
+<div id="outline-container-orgaeaacd4" class="outline-3">
+<h3 id="orgaeaacd4"><span class="section-number-3">1.15.</span> w3m-setting</h3>
 <div class="outline-text-3" id="text-1-15">
 <div class="org-src-container">
 <pre class="src src-shell">tabstop 8
@@ -4350,8 +4350,8 @@ simple_preserve_space 0
 </div>
 </div>
 </div>
-<div id="outline-container-orga87e182" class="outline-3">
-<h3 id="orga87e182"><span class="section-number-3">1.16.</span> Fisher</h3>
+<div id="outline-container-org5d39f52" class="outline-3">
+<h3 id="org5d39f52"><span class="section-number-3">1.16.</span> Fisher</h3>
 <div class="outline-text-3" id="text-1-16">
 <div class="org-src-container">
 <pre class="src src-fish">edc/bass
@@ -4364,8 +4364,8 @@ franciscolourenco/done
 </div>
 </div>
 </div>
-<div id="outline-container-org787a892" class="outline-3">
-<h3 id="org787a892"><span class="section-number-3">1.17.</span> Zsh</h3>
+<div id="outline-container-orgecd6e9a" class="outline-3">
+<h3 id="orgecd6e9a"><span class="section-number-3">1.17.</span> Zsh</h3>
 <div class="outline-text-3" id="text-1-17">
 <div class="org-src-container">
 <pre class="src src-shell"><span style="color: #483d8b;">eval</span> <span style="color: #8b2252;">"$(</span><span style="color: #ff00ff;">starship init zsh</span><span style="color: #8b2252;">)"</span>
@@ -4400,15 +4400,15 @@ franciscolourenco/done
 </div>
 </div>
 </div>
-<div id="outline-container-orge60b8cd" class="outline-3">
-<h3 id="orge60b8cd"><span class="section-number-3">1.18.</span> Script</h3>
+<div id="outline-container-orgf8a76e8" class="outline-3">
+<h3 id="orgf8a76e8"><span class="section-number-3">1.18.</span> Script</h3>
 <div class="outline-text-3" id="text-1-18">
 <p>
 All the script I had written
 </p>
 </div>
-<div id="outline-container-org31fc66d" class="outline-4">
-<h4 id="org31fc66d"><span class="section-number-4">1.18.1.</span> emacs-eshell-toggle.sh</h4>
+<div id="outline-container-orgee37711" class="outline-4">
+<h4 id="orgee37711"><span class="section-number-4">1.18.1.</span> emacs-eshell-toggle.sh</h4>
 <div class="outline-text-4" id="text-1-18-1">
 <div class="org-src-container">
 <pre class="src src-shell">emacsclient  -c -e <span style="color: #8b2252;">"(call-interactively #'eshell)"</span>
@@ -4416,8 +4416,8 @@ All the script I had written
 </div>
 </div>
 </div>
-<div id="outline-container-org418ce17" class="outline-4">
-<h4 id="org418ce17"><span class="section-number-4">1.18.2.</span> emacs-vterm-toggle.sh</h4>
+<div id="outline-container-orga230493" class="outline-4">
+<h4 id="orga230493"><span class="section-number-4">1.18.2.</span> emacs-vterm-toggle.sh</h4>
 <div class="outline-text-4" id="text-1-18-2">
 <div class="org-src-container">
 <pre class="src src-shell">emacsclient  -c -e <span style="color: #8b2252;">"(call-interactively #'vterm)"</span>
@@ -4425,8 +4425,8 @@ All the script I had written
 </div>
 </div>
 </div>
-<div id="outline-container-orgd2a2598" class="outline-4">
-<h4 id="orgd2a2598"><span class="section-number-4">1.18.3.</span> emacs-capture-code</h4>
+<div id="outline-container-org82fdedf" class="outline-4">
+<h4 id="org82fdedf"><span class="section-number-4">1.18.3.</span> emacs-capture-code</h4>
 <div class="outline-text-4" id="text-1-18-3">
 <div class="org-src-container">
 <pre class="src src-shell">~/.emacs.d/bin/org-capture -k <span style="color: #8b2252;">"c"</span>
@@ -4434,8 +4434,8 @@ All the script I had written
 </div>
 </div>
 </div>
-<div id="outline-container-org7341d1a" class="outline-4">
-<h4 id="org7341d1a"><span class="section-number-4">1.18.4.</span> emacs-capture-link.sh</h4>
+<div id="outline-container-orga896cbb" class="outline-4">
+<h4 id="orga896cbb"><span class="section-number-4">1.18.4.</span> emacs-capture-link.sh</h4>
 <div class="outline-text-4" id="text-1-18-4">
 <div class="org-src-container">
 <pre class="src src-shell">~/.emacs.d/bin/org-capture -k <span style="color: #8b2252;">"l"</span>
@@ -4443,8 +4443,8 @@ All the script I had written
 </div>
 </div>
 </div>
-<div id="outline-container-org1ba44cf" class="outline-4">
-<h4 id="org1ba44cf"><span class="section-number-4">1.18.5.</span> emacs-caoture-markdown.sh</h4>
+<div id="outline-container-org6d2e3cf" class="outline-4">
+<h4 id="org6d2e3cf"><span class="section-number-4">1.18.5.</span> emacs-caoture-markdown.sh</h4>
 <div class="outline-text-4" id="text-1-18-5">
 <div class="org-src-container">
 <pre class="src src-shell">~/.emacs.d/bin/org-capture -k <span style="color: #8b2252;">"m"</span>
@@ -4477,8 +4477,8 @@ native-image --initialize-at-build-time  --no-server  --no-fallback  -jar <span 
 </div>
 </div>
 </div>
-<div id="outline-container-orgf0e5b32" class="outline-4">
-<h4 id="orgf0e5b32"><span class="section-number-4">1.18.6.</span> log-notify-send.sh</h4>
+<div id="outline-container-orgb4be26b" class="outline-4">
+<h4 id="orgb4be26b"><span class="section-number-4">1.18.6.</span> log-notify-send.sh</h4>
 <div class="outline-text-4" id="text-1-18-6">
 <div class="org-src-container">
 <pre class="src src-shell"><span style="color: #a0522d;">logfile</span>=$<span style="color: #a0522d;">1</span>
@@ -4494,8 +4494,8 @@ dbus-monitor <span style="color: #8b2252;">"interface='org.freedesktop.Notificat
 </div>
 </div>
 </div>
-<div id="outline-container-org99bf81e" class="outline-4">
-<h4 id="org99bf81e"><span class="section-number-4">1.18.7.</span> join-two-double-lines.vim</h4>
+<div id="outline-container-org8900c20" class="outline-4">
+<h4 id="org8900c20"><span class="section-number-4">1.18.7.</span> join-two-double-lines.vim</h4>
 <div class="outline-text-4" id="text-1-18-7">
 <div class="org-src-container">
 <pre class="src src-vimscript">:%!cat -s
@@ -4505,8 +4505,8 @@ dbus-monitor <span style="color: #8b2252;">"interface='org.freedesktop.Notificat
 </div>
 </div>
 </div>
-<div id="outline-container-orgd893126" class="outline-3">
-<h3 id="orgd893126"><span class="section-number-3">1.19.</span> Kitty config</h3>
+<div id="outline-container-org9f25423" class="outline-3">
+<h3 id="org9f25423"><span class="section-number-3">1.19.</span> Kitty config</h3>
 <div class="outline-text-3" id="text-1-19">
 <div class="org-src-container">
 <pre class="src src-yaml"># vim:fileencoding=utf-8:ft=conf:foldmethod=marker
@@ -5626,8 +5626,8 @@ macos_thicken_font 0.3
 </div>
 </div>
 </div>
-<div id="outline-container-orgf6aa8cf" class="outline-3">
-<h3 id="orgf6aa8cf"><span class="section-number-3">1.20.</span> Go cheat</h3>
+<div id="outline-container-orgbe79a84" class="outline-3">
+<h3 id="orgbe79a84"><span class="section-number-3">1.20.</span> Go cheat</h3>
 <div class="outline-text-3" id="text-1-20">
 <div class="org-src-container">
 <pre class="src src-yaml">---
@@ -5704,12 +5704,12 @@ cheatpaths:
 </div>
 </div>
 </div>
-<div id="outline-container-orgf729aff" class="outline-3">
-<h3 id="orgf729aff"><span class="section-number-3">1.21.</span> makem.sh</h3>
+<div id="outline-container-org271a848" class="outline-3">
+<h3 id="org271a848"><span class="section-number-3">1.21.</span> makem.sh</h3>
 <div class="outline-text-3" id="text-1-21">
 </div>
-<div id="outline-container-org8e0273c" class="outline-4">
-<h4 id="org8e0273c"><span class="section-number-4">1.21.1.</span> makem.sh</h4>
+<div id="outline-container-org943c2d5" class="outline-4">
+<h4 id="org943c2d5"><span class="section-number-4">1.21.1.</span> makem.sh</h4>
 <div class="outline-text-4" id="text-1-21-1">
 <div class="org-src-container">
 <pre class="src src-yaml">#!/usr/bin/env bash
@@ -6981,8 +6981,8 @@ Rules:
 </div>
 </div>
 </div>
-<div id="outline-container-orgb6bd1ea" class="outline-4">
-<h4 id="orgb6bd1ea"><span class="section-number-4">1.21.2.</span> makefile</h4>
+<div id="outline-container-org9e969a1" class="outline-4">
+<h4 id="org9e969a1"><span class="section-number-4">1.21.2.</span> makefile</h4>
 <div class="outline-text-4" id="text-1-21-2">
 <div class="org-src-container">
 <pre class="src src-yaml"># * makem.sh/Makefile --- Script to aid building and testing Emacs Lisp packages
@@ -7056,8 +7056,8 @@ endif
 </div>
 </div>
 </div>
-<div id="outline-container-orgf909b84" class="outline-3">
-<h3 id="orgf909b84"><span class="section-number-3">1.22.</span> Emacs cheat</h3>
+<div id="outline-container-org957b250" class="outline-3">
+<h3 id="org957b250"><span class="section-number-3">1.22.</span> Emacs cheat</h3>
 <div class="outline-text-3" id="text-1-22">
 <div class="org-src-container">
 <pre class="src src-elisp">
@@ -7065,8 +7065,8 @@ endif
 </div>
 </div>
 </div>
-<div id="outline-container-orgc3457b2" class="outline-3">
-<h3 id="orgc3457b2"><span class="section-number-3">1.23.</span> Vifm</h3>
+<div id="outline-container-orge89bbfc" class="outline-3">
+<h3 id="orge89bbfc"><span class="section-number-3">1.23.</span> Vifm</h3>
 <div class="outline-text-3" id="text-1-23">
 <div class="org-src-container">
 <pre class="src src-vimrc">" vim: filetype=vifm :
@@ -7574,8 +7574,8 @@ nnoremap &lt;c-u&gt; &lt;c-w&gt;x
 </div>
 </div>
 </div>
-<div id="outline-container-orgf959d4f" class="outline-3">
-<h3 id="orgf959d4f"><span class="section-number-3">1.24.</span> newsboat</h3>
+<div id="outline-container-orge94d474" class="outline-3">
+<h3 id="orge94d474"><span class="section-number-3">1.24.</span> newsboat</h3>
 <div class="outline-text-3" id="text-1-24">
 <p>
 Oh newsboat, I am not using you anymore, but I still love you.
@@ -7591,8 +7591,8 @@ Oh newsboat, I am not using you anymore, but I still love you.
 </div>
 </div>
 </div>
-<div id="outline-container-org2d01e25" class="outline-3">
-<h3 id="org2d01e25"><span class="section-number-3">1.25.</span> scratch</h3>
+<div id="outline-container-org83e3916" class="outline-3">
+<h3 id="org83e3916"><span class="section-number-3">1.25.</span> scratch</h3>
 <div class="outline-text-3" id="text-1-25">
 <div class="org-src-container">
 <pre class="src src-python">printnt
@@ -7609,8 +7609,8 @@ pr
 </div>
 </div>
 </div>
-<div id="outline-container-org9be8f60" class="outline-3">
-<h3 id="org9be8f60"><span class="section-number-3">1.26.</span> Xonsh</h3>
+<div id="outline-container-org31cb423" class="outline-3">
+<h3 id="org31cb423"><span class="section-number-3">1.26.</span> Xonsh</h3>
 <div class="outline-text-3" id="text-1-26">
 <div class="org-src-container">
 <pre class="src src-xonsh"># XONSH WEBCONFIG START
@@ -7623,8 +7623,8 @@ xontrib load z
 </div>
 </div>
 </div>
-<div id="outline-container-orgf8d8909" class="outline-3">
-<h3 id="orgf8d8909"><span class="section-number-3">1.27.</span> Scratch.el</h3>
+<div id="outline-container-orgda35baa" class="outline-3">
+<h3 id="orgda35baa"><span class="section-number-3">1.27.</span> Scratch.el</h3>
 <div class="outline-text-3" id="text-1-27">
 <div class="org-src-container">
 <pre class="src src-elisp">;;; <span style="color: #b22222;">scratch.el -*- lexical-binding: t; -*-</span>
@@ -8209,7 +8209,7 @@ xontrib load z
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Nhannht</p>
-<p class="date">Created: 2023-01-07 Sat 18:03</p>
+<p class="date">Created: 2023-01-07 Sat 18:08</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
